@@ -3,23 +3,30 @@ class App extends React.Component {
     super();
     this.state = {
       videoList: window.exampleVideoData,
-      currentVideo: 0
+      currentVideo: window.exampleVideoData[0]
     };
   }
+  
+  onClick(video) {
+    this.setState({
+      currentVideo: window.exampleVideoData[0]
+    });
+  }
+  
   render() {
     //console.log(window.exampleVideoData)
     return (<div>
       <nav className="navbar">
         <div className="col-md-6 offset-md-3">
-          <div><h5><em>search</em> view goes here</h5></div>
+          <Search />
         </div>
       </nav>
       <div className="row">
         <div className="col-md-7">
-          <VideoPlayer videos={this.state.currentVideo}/>
+          <VideoPlayer video={this.state.currentVideo}/>
         </div>
         <div className="col-md-5">
-          <VideoList videos={this.state.videoList}/>
+          <VideoList videos={this.state.videoList} click={this.onClick.bind(this)}/>
         </div>
       </div>
     </div>);

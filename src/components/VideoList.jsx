@@ -15,6 +15,7 @@ var VideoList = (props) => (
       key={video.id.videoId}
       video={video}
       img={video.snippet.thumbnails.url}
+      click={props.click.bind(this)}
     />
     )}
   </div>

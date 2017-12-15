@@ -4,10 +4,12 @@ class App extends React.Component {
     this.state = {
       videoList: window.exampleVideoData,
       currentVideo: window.exampleVideoData[0],
-      
+      //query: ''
     };
     //this.onClick = this.onClick.bind(this);
   }
+  
+
   
   selectVideoEntry(val) {
     this.setState({

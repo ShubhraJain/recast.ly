@@ -16,20 +16,21 @@ class Search extends React.Component {
     
   }
     
-  searchQuery(query) {
-    console.log('query-ed');
-    this.setState({
-      query: query
-    });
-  }
+  // searchQuery(event) {
+  //   console.log('query-ed');
+  //   this.props.()
+  //   this.setState({
+  //     query: query
+  //   });
+  // }
   
   
   render() {
-    console.log(this.searchQuery);
+    console.log();
     return (<div className="search-bar form-inline">
           <input className="form-control" type="text" 
                   query = {this.state.query} 
-                  onClick={(query) => this.searchQuery}
+                  onChange={(query) => this.querySearch}
           />
           <button className="btn hidden-sm-down"
             >

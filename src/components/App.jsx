@@ -6,13 +6,12 @@ class App extends React.Component {
       currentVideo: window.exampleVideoData[0],
       
     };
-    this.onClick = this.onClick.bind(this);
+    //this.onClick = this.onClick.bind(this);
   }
   
-  onClick(val) {
-    console.log('this: ', this, 'val: ', val);
+  selectVideoEntry(val) {
     this.setState({
-      currentVideo: this.state.videoList[2]
+      currentVideo: val
     });
   }
   
@@ -29,7 +28,10 @@ class App extends React.Component {
           <VideoPlayer video={this.state.currentVideo}/>
         </div>
         <div className="col-md-5">
-          <VideoList videos={this.state.videoList} click={this.onClick}/>
+          <VideoList 
+          selectVideoEntry={this.selectVideoEntry.bind(this)}
+          videos={this.state.videoList} 
+          />
         </div>
       </div>
     </div>);
@@ -41,3 +43,4 @@ class App extends React.Component {
 window.App = App;
 
 
+// 

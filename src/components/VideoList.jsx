@@ -8,14 +8,14 @@
 //   </div>
 // );
 
-var VideoList = (props) => (
+var VideoList = ({videos, selectVideoEntry}) => (
   <div className="video-list">
-    {props.videos.map(video =>
+    {videos.map(video =>
     <VideoListEntry
-      key={video.id.videoId}
+      key={video.etag}
       video={video}
-      img={video.snippet.thumbnails.url}
-      click={props.click.bind(this)}
+      //img={video.snippet.thumbnails.url}
+      selectVideoEntry={selectVideoEntry}
     />
     )}
   </div>
